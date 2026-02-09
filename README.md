@@ -54,6 +54,17 @@ Este projeto é um **mini dashboard bancário** desenvolvido como parte de um **
 
 ---
 
+### 🌍 Deploy
+
+O projeto foi publicado utilizando a Vercel, plataforma recomendada para aplicações Next.js.
+
+🔗 Demo online:
+https://feeagro-test.vercel.app/
+
+
+Observação: esta aplicação é uma simulação e não realiza transações reais.
+
+
 ## 🧪 Testes
 
 Os testes foram pensados para cobrir **o que realmente importa**, sem excesso:
@@ -127,6 +138,9 @@ Boas práticas de frontend
 
 Experiência do usuário
 
-Facilidade de manutenção
+Facilidade de manutenção.
 
 Obrigado pela oportunidade 🚀
+
+
+
