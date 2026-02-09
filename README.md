@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌱 RWA Banking Dashboard
 
-## Getting Started
+Este projeto é um **mini dashboard bancário** desenvolvido como parte de um **teste técnico Frontend**, simulando operações financeiras e visualização de ativos RWA (Real World Assets), com foco em **UX, clareza de código e boas práticas**.
 
-First, run the development server:
+---
 
+## ✨ Funcionalidades
+
+- Dashboard com visão geral da conta
+- Saldo atual calculado dinamicamente
+- Entradas, saídas e total de transações
+- Gráfico de evolução do saldo
+- Simulação de novas operações (entrada/saída)
+- Lista de transações com loading e empty state
+- Portfólio RWA (exemplo com ativos do agro)
+- Persistência em `localStorage`
+- Feedback visual com toasts e modais
+- Layout responsivo (desktop e mobile)
+
+---
+
+## 🛠️ Stack utilizada
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **React Hook Form + Zod**
+- **Context API**
+- **Jest + Testing Library**
+
+---
+
+## 🧠 Decisões técnicas
+
+### Server vs Client Components
+- Páginas e layouts utilizam **Server Components** sempre que possível
+- Componentes interativos (forms, listas, menus) são **Client Components**
+- Hooks e estados são isolados apenas onde necessários
+
+### Gerenciamento de estado
+- **Context API** para:
+  - Usuário
+  - Transações
+  - Toasts
+- Escolha feita por simplicidade e clareza, evitando overengineering
+
+### Arquitetura
+- Separação clara entre:
+  - `lib/` → regras de negócio
+  - `contexts/` → estado global
+  - `components/` → UI reutilizável
+- Funções puras isoladas para facilitar testes
+
+---
+
+## 🧪 Testes
+
+Os testes foram pensados para cobrir **o que realmente importa**, sem excesso:
+
+### Testes unitários
+- Funções de cálculo financeiro (`lib/finance`)
+- Garantem confiabilidade das regras de negócio
+
+### Testes de componente
+- `TransactionList`
+- Cobertura de:
+  - Empty state
+  - Renderização de transações
+
+### Estratégia
+- Priorizei **qualidade e intenção**, não quantidade
+- Evitei testes frágeis de layout ou estilos
+- O dashboard, por ser majoritariamente composição de componentes, não foi extensivamente testado
+
+### Rodar os testes
 ```bash
+npm test
+🎨 UX e Design
+Layout pensado em hierarquia visual clara
+
+Separação entre:
+
+Informações de impacto (entradas/saídas)
+
+Insights (resultado do período)
+
+Contexto (portfólio RWA e atividades recentes)
+
+Uso de cores para comunicar estados (verde/vermelho)
+
+Espaçamento e alinhamento refinados para evitar ruído visual
+
+📁 Estrutura de pastas (resumo)
+src/
+ ├─ app/
+ ├─ components/
+ ├─ contexts/
+ ├─ lib/
+ ├─ mocks/
+ └─ __tests__/
+     ├─ unit/
+     └─ components/
+🚀 Como rodar o projeto
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Acesse:
+👉 http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔮 Próximos passos (se houvesse mais tempo)
+Testes de integração mais amplos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Filtro avançado de transações
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Customização de usuário (nome, avatar, preferências)
 
-## Learn More
+Gráficos mais completos (períodos configuráveis)
 
-To learn more about Next.js, take a look at the following resources:
+Integração com backend real / API
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+👩‍💻 Observações finais
+Este projeto foi desenvolvido com foco em:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Clareza de código
 
-## Deploy on Vercel
+Boas práticas de frontend
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Experiência do usuário
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Facilidade de manutenção
+
+Obrigado pela oportunidade 🚀
